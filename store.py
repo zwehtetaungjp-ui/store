@@ -55,9 +55,9 @@ if "checked_data" not in st.session_state:
 
 # Telegram သို့ စာပို့ပေးသည့် Function
 def send_telegram_message(message):
-    url = f"https://api.telegram.org/bot{8803360365:AAHk_QUyHb5SBjMfzg_VyD9fqo5JENvkYI}/sendMessage"
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {
-        "chat_id": 6826543956,
+        "chat_id": CHAT_ID ,
         "text": message
     }
     try:
