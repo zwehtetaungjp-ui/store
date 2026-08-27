@@ -10,7 +10,7 @@ st.set_page_config(
 )
 
 # Telegram Config
-BOT_TOKEN = "8403531874:AAGZjRK_4xPNZ5igmHRmu5NIuLf8rS1sb-g"
+BOT_TOKEN = "8683276106:AAHIDeDyVGRRjJUuIEH-YPHIJjuZ3eXHL3s"
 CHAT_ID = "6826543956"
 
 # ပစ္စည်းများစာရင်း Data (၃၀ ခု)
