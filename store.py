@@ -83,7 +83,7 @@ if st.session_state.page == 1:
                 if i + j < len(ITEMS_DATA):
                     item = ITEMS_DATA[i + j]
                     with cols[j]:
-                        st.img(item["img"], width=80)
+                        st.image(item["img"], width=80)
                         st.markdown(f"*{item['name']}*")
                         # Input box
                         qty = st.number_input(
