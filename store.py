@@ -15,7 +15,7 @@ CHAT_ID = "6826543956"
 
 # ပစ္စည်းများစာရင်း Data (၃၀ ခု)
 ITEMS_DATA = [
-    {"id": 1, "name": "ပစ္စည်း ၁", "img": "eggplant.png"},
+    {"id": 1, "name": "ပစ္စည်း ၁", "img": "https://www.bing.com/images/search?view=detailV2&ccid=KgFb17o1&id=E82203BBE71D67B576C01381702CE1DA5A4C83B4&thid=OIP.KgFb17o15i0Q1T0RdDhjpgHaEK&mediaurl=https%3A%2F%2Fwww.mashed.com%2Fimg%2Fgallery%2F23-eggplant-recipes-even-meat-eaters-will-love%2Fl-intro-1662170192.jpg&exph=901&expw=1600&q=eggplant&form=IRPRST&ck=52D83518ECD0AA12C52B0EC501686A4C&selectedindex=11&itb=0&cw=1250&ch=592&ajaxhist=0&ajaxserp=0&vt=0&sim=11"},
     {"id": 2, "name": "ပစ္စည်း ၂", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 3, "name": "ပစ္စည်း ၃", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 4, "name": "ပစ္စည်း ၄", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
