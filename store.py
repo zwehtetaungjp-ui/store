@@ -69,7 +69,7 @@ def send_telegram_message(message):
 # ----------------PAGE 1: စာရင်း ရိုက်ထည့်သည့် စာမျက်နှာ ----------------
 if st.session_state.page == 1:
     st.title("発注 (ဂိုထောင် ပစ္စည်းစစ်ဆေးရေး)")
-    st.write("ပစ္စည်း အရေအတွက်များကို ရိုက်ထည့်ပါ-")
+    st.write("数を入力してください")
 
     # Input Form
     with st.form("inventory_form"):
@@ -110,14 +110,14 @@ if st.session_state.page == 1:
 
 # ----------------PAGE 2: အတည်ပြုပြီး Telegram သို့ ပို့သည့် စာမျက်နှာ ----------------
 elif st.session_state.page == 2:
-    if st.button("← ပြင်ဆင်မည်"):
+    if st.button("← ပြင်ဆင်မည်　直す"):
         st.session_state.page = 1
         st.rerun()
 
-    st.title("စစ်ဆေးထားသည့် စာရင်း")
+    st.title("စစ်ဆေးထားသည့် စာရင်း　発注リスト")
 
     # ရွေးချယ်ထားသော စာရင်းများ ပြသခြင်း
-    st.subheader("ရွေးချယ်ထားသော ပစ္စည်းများ:")
+    st.subheader("Selected Items,ရွေးချယ်ထားသော ပစ္စည်းများ:")
     for name, qty in st.session_state.checked_data.items():
         st.write(f"• *{name}*: {qty} ခု")
 
@@ -133,11 +133,11 @@ elif st.session_state.page == 2:
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         message_text += f"\n📅 ရက်စွဲ: {current_time}"
 
-        with st.spinner("Telegram သို့ စာပို့နေပါသည်..."):
+        with st.spinner("送信中。。。Telegram သို့ စာပို့နေပါသည်..."):
             res = send_telegram_message(message_text)
 
         if res.get("ok"):
-            st.success("✅ Telegram သို့ စာရင်းများ ပို့ဆောင်ပြီးပါပြီ!")
+            st.success("✅できた Done Telegram သို့ စာရင်းများ ပို့ဆောင်ပြီးပါပြီ!")
             st.balloons()
         else:
-            st.error(f"❌ ပို့ဆောင်မှု မအောင်မြင်ပါ: {res.get('description')}")
+            st.error(f"❌エラー ပို့ဆောင်မှု မအောင်မြင်ပါ: {res.get('description')}")
