@@ -15,7 +15,7 @@ CHAT_ID = "6826543956"
 
 # ပစ္စည်းများစာရင်း Data (၃၀ ခု)
 ITEMS_DATA = [
-    {"id": 1, "name": "ပစ္စည်း ၁", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
+    {"id": 1, "name": "ပစ္စည်း ၁", "img": "eggplant.png"},
     {"id": 2, "name": "ပစ္စည်း ၂", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 3, "name": "ပစ္စည်း ၃", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 4, "name": "ပစ္စည်း ၄", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
