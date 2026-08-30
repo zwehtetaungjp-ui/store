@@ -44,7 +44,7 @@ ITEMS_DATA = [
     {"id": 27, "name": "ပစ္စည်း ၂၇", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 28, "name": "ပစ္စည်း ၂၈", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 29, "name": "油", "img": "pictures for Store/oil.png"},
-    {"id": 30, "name": "ပစ္စည်း ၃၀", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
+    {"id": 30, "name": "たまご（卵）", "img": "pictures for Store/egg.png"},
 ]
 
 # Session state စတင် သတ်မှတ်ခြင်း (Page Switch လုပ်ရန်)
