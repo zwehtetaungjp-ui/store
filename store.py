@@ -16,9 +16,9 @@ CHAT_ID = "6826543956"
 # ပစ္စည်းများစာရင်း Data (၃၀ ခု)
 ITEMS_DATA = [
     {"id": 1, "name": "なすび", "img": "pictures for Store/eggplant.png"},
-    {"id": 2, "name": "かぼちゃ", "img": ""pictures for Store/pukim.png"},
-    {"id": 3, "name": "れんこん", "img": ""pictures for Store/renkon.png"},
-    {"id": 4, "name": "白ネギ", "img": ""pictures for Store/shironegi.png"},
+    {"id": 2, "name": "かぼちゃ", "img": "pictures for Store/pukim.png"},
+    {"id": 3, "name": "れんこん", "img": "pictures for Store/renkon.png"},
+    {"id": 4, "name": "白ネギ", "img": "pictures for Store/shironegi.png"},
     {"id": 5, "name": "ပစ္စည်း ၅", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 6, "name": "ပစ္စည်း ၆", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 7, "name": "ပစ္စည်း ၇", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
