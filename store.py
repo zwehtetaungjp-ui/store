@@ -119,7 +119,7 @@ elif st.session_state.page == 2:
     # ရွေးချယ်ထားသော စာရင်းများ ပြသခြင်း
     st.subheader("Selected Items,ရွေးချယ်ထားသော ပစ္စည်းများ:")
     for name, qty in st.session_state.checked_data.items():
-        st.write(f"• *{name}*: {qty} ခု")
+        st.write(f"• 　　*{name}*　　:　 {qty} 　点")
 
     st.divider()
 
