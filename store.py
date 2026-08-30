@@ -128,10 +128,10 @@ elif st.session_state.page == 2:
         # Message စာသား ပြင်ဆင်ခြင်း
         message_text = "📦 ဂိုထောင် ပစ္စည်းစစ်ဆေးပြီး စာရင်း\n\n"
         for name, qty in st.session_state.checked_data.items():
-            message_text += f"• {name}: {qty} ခု\n"
+            message_text += f"• {name} : {qty}  点\n"
         
         current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        message_text += f"\n📅 ရက်စွဲ: {current_time}"
+        message_text += f"\n📅 Date ရက်စွဲ: {current_time}"
 
         with st.spinner("送信中。。。Telegram သို့ စာပို့နေပါသည်..."):
             res = send_telegram_message(message_text)
