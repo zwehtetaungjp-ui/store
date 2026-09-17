@@ -4,7 +4,7 @@ from datetime import datetime
 
 # Streamlit Page Setting
 st.set_page_config(
-    page_title="ဂိုထောင် ပစ္စည်းစစ်ဆေးရေး",
+    page_title="Check Items for Order あべの",
     page_icon="📦",
     layout="wide"
 )
