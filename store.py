@@ -130,7 +130,7 @@ elif st.session_state.page == 2:
         for name, qty in st.session_state.checked_data.items():
             message_text += f"• {name} : {qty}  点\n"
         
-        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        current_time = datetime.now().strftime("%Y-%m-%d")
         message_text += f"\n📅 Date ရက်စွဲ: {current_time}"
 
         with st.spinner("送信中。。。Telegram သို့ စာပို့နေပါသည်..."):
