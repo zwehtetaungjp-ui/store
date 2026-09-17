@@ -1,27 +1,42 @@
 import streamlit as st
 import requests
 from datetime import datetime
+
+# ⚠️ ၁။ st.set_page_config ကို အမြဲတမ်း ပထမဆုံး Streamlit Command အဖြစ် ထားရပါမည်
+st.set_page_config(
+    page_title="Check Items for Order あべの",
+    page_icon="📦",
+    layout="wide"
+)
+
+# ⚠️ ၂။ Primary Button များကို အစိမ်းရောင် ပြောင်းရန် CSS Style
 st.markdown(
     """
     <style>
-    div.stButton > button[kind="primary"] {
+    /* Primary Button အရောင်ကို အစိမ်းရောင် ပြောင်းခြင်း */
+    button[data-testid="stBaseButton-primary"] {
         background-color: #28a745 !important;
         color: white !important;
         border-color: #28a745 !important;
     }
-    div.stButton > button[kind="primary"]:hover {
+    button[data-testid="stBaseButton-primary"]:hover {
+        background-color: #218838 !important;
+        border-color: #1e7e34 !important;
+    }
+    
+    /* Form ရဲ့ Submit Button ကိုလည်း အစိမ်းရောင် ပြောင်းပေးခြင်း */
+    div[data-testid="stFormSubmitButton"] > button {
+        background-color: #28a745 !important;
+        color: white !important;
+        border-color: #28a745 !important;
+    }
+    div[data-testid="stFormSubmitButton"] > button:hover {
         background-color: #218838 !important;
         border-color: #1e7e34 !important;
     }
     </style>
     """,
     unsafe_allow_html=True,
-)
-# Streamlit Page Setting
-st.set_page_config(
-    page_title="Check Items for Order あべの",
-    page_icon="📦",
-    layout="wide"
 )
 
 # Telegram Config
@@ -62,11 +77,14 @@ ITEMS_DATA = [
     {"id": 30, "name": "たまご（卵）", "img": "pictures for Store/egg.png"},
 ]
 
-# Session state စတင် သတ်မှတ်ခြင်း (Page Switch လုပ်ရန်)
+# Session state စတင် သတ်မှတ်ခြင်း (Page Switch နှင့် Input Values များ မှတ်ထားရန်)
 if "page" not in st.session_state:
     st.session_state.page = 1
 if "checked_data" not in st.session_state:
     st.session_state.checked_data = {}
+# ✨ တန်ဖိုးများကို မပျောက်အောင် သိမ်းရန် Dictionary သစ်တစ်ခု ထည့်သွင်းခြင်း
+if "input_values" not in st.session_state:
+    st.session_state.input_values = {}
 
 # Telegram သို့ စာပို့ပေးသည့် Function
 def send_telegram_message(message):
@@ -88,7 +106,6 @@ if st.session_state.page == 1:
 
     # Input Form
     with st.form("inventory_form"):
-        # Grid ကဲ့သို့ ၃ ကော်လံ ခွဲပြခြင်း
         cols_per_row = 3
         form_data = {}
 
@@ -97,17 +114,27 @@ if st.session_state.page == 1:
             for j in range(cols_per_row):
                 if i + j < len(ITEMS_DATA):
                     item = ITEMS_DATA[i + j]
+                    item_id = item["id"]
+                    
+                    # ယခင် ရိုက်ထားဖူးသော တန်ဖိုးရှိရင် ပြန်ယူ၊ မရှိရင် 0 လို့ သတ်မှတ်
+                    saved_val = st.session_state.input_values.get(item_id, 0)
+
                     with cols[j]:
                         st.image(item["img"], width=200)
                         st.markdown(f"*{item['name']}*")
-                        # Input box
+                        
+                        # ✨ value=saved_val ထည့်ပေးထားသောကြောင့် နောက်ပြန်လာရင် တန်ဖိုးမပျောက်ပါ
                         qty = st.number_input(
-                            label=f"qty_{item['id']}", 
+                            label=f"qty_{item_id}", 
                             min_value=0, 
+                            value=saved_val,
                             step=1, 
-                            key=f"input_{item['id']}",
+                            key=f"input_{item_id}",
                             label_visibility="collapsed"
                         )
+                        
+                        # ရိုက်ထည့်ထားသည့် တန်ဖိုးများကို မှတ်ထားခြင်း
+                        st.session_state.input_values[item_id] = qty
                         if qty > 0:
                             form_data[item["name"]] = qty
                         st.divider()
@@ -125,16 +152,16 @@ if st.session_state.page == 1:
 
 # ----------------PAGE 2: အတည်ပြုပြီး Telegram သို့ ပို့သည့် စာမျက်နှာ ----------------
 elif st.session_state.page == 2:
-    if st.button("← ပြင်ဆင်မည်　直す"):
+    if st.button("← ပြင်ဆင်မည် 直す"):
         st.session_state.page = 1
         st.rerun()
 
-    st.title("စစ်ဆေးထားသည့် စာရင်း　発注リスト")
+    st.title("စစ်ဆေးထားသည့် စာရင်း 発注リスト")
 
     # ရွေးချယ်ထားသော စာရင်းများ ပြသခြင်း
     st.subheader("Selected Items,ရွေးချယ်ထားသော ပစ္စည်းများ:")
     for name, qty in st.session_state.checked_data.items():
-        st.write(f"• 　　*{name}*　　:　 {qty} 　点")
+        st.write(f"•   *{name}*  :  {qty}  点")
 
     st.divider()
 
@@ -154,5 +181,8 @@ elif st.session_state.page == 2:
         if res.get("ok"):
             st.success("✅できた Done Telegram သို့ စာရင်းများ ပို့ဆောင်ပြီးပါပြီ!")
             st.balloons()
+            # ပို့ပြီးသွားပါက ရိုက်ထားသမျှ Data များကို Clear လုပ်ချင်ပါက အောက်ပါ ကုဒ် ၂ ကြောင်းကို ပြန်ဖွင့်နိုင်ပါတယ်
+            # st.session_state.input_values = {}
+            # st.session_state.checked_data = {}
         else:
             st.error(f"❌エラー ပို့ဆောင်မှု မအောင်မြင်ပါ: {res.get('description')}")
