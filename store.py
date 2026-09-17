@@ -122,7 +122,22 @@ elif st.session_state.page == 2:
         st.write(f"• 　　*{name}*　　:　 {qty} 　点")
 
     st.divider()
-
+st.markdown(
+    """
+    <style>
+    div.stButton > button[kind="primary"] {
+        background-color: #28a745 !important;
+        color: white !important;
+        border-color: #28a745 !important;
+    }
+    div.stButton > button[kind="primary"]:hover {
+        background-color: #218838 !important;
+        border-color: #1e7e34 !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
     # Telegram သို့ ပို့မည့် ခလုတ်
     if st.button("Send to TG 送信", use_container_width=True, type="primary"):
         # Message စာသား ပြင်ဆင်ခြင်း
