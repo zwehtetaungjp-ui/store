@@ -82,22 +82,6 @@ def send_telegram_message(message):
         return {"ok": False, "description": str(e)}
 
 # ----------------PAGE 1: စာရင်း ရိုက်ထည့်သည့် စာမျက်နှာ ----------------
-st.markdown(
-    """
-    <style>
-    div.stButton > button[kind="primary"] {
-        background-color: #28a745 !important;
-        color: white !important;
-        border-color: #28a745 !important;
-    }
-    div.stButton > button[kind="primary"]:hover {
-        background-color: #218838 !important;
-        border-color: #1e7e34 !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 if st.session_state.page == 1:
     st.title("発注 (ဂိုထောင် ပစ္စည်းစစ်ဆေးရေး)")
     st.write("数を入力してください")
