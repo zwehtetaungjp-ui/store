@@ -124,7 +124,7 @@ elif st.session_state.page == 2:
     st.divider()
 
     # Telegram သို့ ပို့မည့် ခလုတ်
-    if st.button("Send to Telegram 🚀", use_container_width=True, type="primary"):
+    if st.button("Send to TG 送信", use_container_width=True, type="primary"):
         # Message စာသား ပြင်ဆင်ခြင်း
         message_text = "📦 ဂိုထောင် ပစ္စည်းစစ်ဆေးပြီး စာရင်း\n\n"
         for name, qty in st.session_state.checked_data.items():
