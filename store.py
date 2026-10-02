@@ -54,7 +54,7 @@ ITEMS_DATA = [
     {"id": 8, "name": "大葉", "img": "pictures for Store/oba.png"},
     {"id": 9, "name": "玉ねぎ", "img": "pictures for Store/onion.png"},
     {"id": 4, "name": "さつまいも", "img": "pictures for Store/satsumai.png"},
-    {"id": 10, "name": "カレー", "img": "Store/kare.png"},
+    {"id": 10, "name": "カレー", "img": "pictures for Store/kare.png"},
     {"id": 11, "name": "からあげソース", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 12, "name": "からあげ粉", "img": "https://cdn-icons-png.flaticon.com/512/3081/3081559.png"},
     {"id": 13, "name": "小粉", "img": "pictures for Store/sokomugi.png"},
