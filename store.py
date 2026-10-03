@@ -86,7 +86,7 @@ ITEMS_DATA = [
     {"id": 14, "name": "天ぷら粉", "img": "pictures for Store/tepurakona.jpg"},
     {"id": 15, "name": "ソースカツタレ", "img": "pictures for Store/sosukatsu.png"},
     {"id": 16, "name": "カツカレー", "img": DEFAULT_PLACEHOLDER},
-    {"id": 17, "name": "なんばんタレ", "img": "pictures for Store/download.jpg"},
+    {"id": 17, "name": "なんばんタレ", "img": "pictures for Store/nanbansosu.jpg"},
     {"id": 18, "name": "ပစ္စည်း ၁၈", "img": DEFAULT_PLACEHOLDER},
     {"id": 19, "name": "ပစ္စည်း ၁၉", "img": DEFAULT_PLACEHOLDER},
     {"id": 20, "name": "ပစ္စည်း ၂၀", "img": DEFAULT_PLACEHOLDER},
