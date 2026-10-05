@@ -73,7 +73,7 @@ ITEMS_DATA = [
     {"id": 1, "name": "なすび", "img": "pictures for Store/eggplant.png"},
     {"id": 2, "name": "かぼちゃ", "img": "pictures for Store/pukim.png"},
     {"id": 3, "name": "れんこん", "img": "pictures for Store/renkon.png"},
-    {"id": 4, "name": "さつまいも", "img": "pictures for Store/eggplant.png"},
+    {"id": 4, "name": "さつまいも", "img": "pictures for Store/satsumai.png"},
     {"id": 5, "name": "白ネギ", "img": "pictures for Store/shironegi.png"},
     {"id": 6, "name": "青ネギ", "img": "pictures for Store/aonegi.png"},
     {"id": 7, "name": "だいこん", "img": "pictures for Store/daikon.png"},
